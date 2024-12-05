@@ -50,11 +50,11 @@ main {
 }
 
 .invite-intro {
-    padding-top: 1rem;
+    padding-top: 0.5rem;
 }
 .datetime {
 	font-size: 1.25rem;
-	margin: 1.0rem 0;
+	margin: 0.5rem 0;
 	font-weight: 100;
     color: #001d3d;
 }
