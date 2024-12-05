@@ -22,7 +22,9 @@
 	<!-- <link rel="stylesheet" href="css/themes/yellow-black.css"> -->
 </head>
 <body>
-	<main>
+	<main><div id="submissionMessage" style="display: none; margin-top: 20px; color: green;">
+        Thank you for your RSVP, We look forward to seeing you at the wedding.
+    </div>
         <div class="intro-container">
         <div class="invite-intro">Wedding of </div>
         <div class="intro"><span style="color: #ef476f;">Ravina
@@ -64,6 +66,14 @@
     </div>
     <div class="footer"></div>
         </main>
+        <script>
+            window.onload = function() {
+                const urlParams = new URLSearchParams(window.location.search);
+                if (urlParams.get('submitted') === 'true') {
+                    document.getElementById('submissionMessage').style.display = 'block';
+                }
+            };
+        </script>
 </body>
 </html>
 <!-- 073B4C
