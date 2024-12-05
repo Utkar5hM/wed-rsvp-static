@@ -45,19 +45,18 @@ main {
 
 .intro {
 	font-family: 'Reem Kufi', sans-serif;
-	font-size: 3.75em;
+	font-size: 2.75em;
 	font-weight: 600;
 }
 
 .invite-intro {
-    padding-top: 3rem;
+    padding-top: 1rem;
 }
 .datetime {
 	font-size: 1.25rem;
-	margin: 1.25rem 0;
+	margin: 1.0rem 0;
 	font-weight: 100;
     color: #001d3d;
-    padding-bottom: 5rem;
 }
 .venue-head {
 	font-family: 'Reem Kufi', sans-serif;
@@ -151,6 +150,14 @@ main {
     color: #001d3d;
 }
 
+.rsvp-form .radio-label {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #463f3a;
+    font-weight: normal;
+    margin-left: 5px;
+}
+
 .rsvp-form input, .rsvp-form select {
     margin-top: 5px;
     padding: 10px;
@@ -182,9 +189,9 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 50vh;
+    min-height: 1.40625vh;
     text-align: center;
-    margin-top:25vh;
+    margin-top: 1.40625vh;
     padding-bottom: 0;
     margin-bottom: 0;
 }

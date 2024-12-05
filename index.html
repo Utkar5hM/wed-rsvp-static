@@ -24,7 +24,7 @@
 <body>
 	<main>
         <div class="intro-container">
-        <div class="invite-intro">We are delighted to invite you to the wedding of </div>
+        <div class="invite-intro">Wedding of </div>
         <div class="intro"><span style="color: #ef476f;">Ravina
         </span> 
         <span style="color: #073B4C;">&</span> 
@@ -40,17 +40,24 @@
     <div class="rsvp-form">
         <div class="venue-head">RSVP</div>
         <form>
-            <label for="attending">Will you be attending?</label>
-            <select id="attending" name="attending">
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
-            </select>
-            <br>
+            <label>Will you be attending?</label>
+            <div>
+                <input type="radio" id="option1" name="attending" value="25th Simant pooja and sangeet night">
+                <label class="radio-label" for="option1">25th Simant pooja and sangeet night</label>
+            </div>
+            <div>
+                <input type="radio" id="option2" name="attending" value="25th Simant pooja and sangeet night with stay">
+                <label class="radio-label" for="option2">25th Simant pooja and sangeet night with stay</label>
+            </div>
+            <div>
+                <input type="radio" id="option3" name="attending" value="26th wedding only">
+                <label class="radio-label" for="option3">26th wedding only</label>
+            </div>
             <label for="name">Your Name:</label>
             <input type="text" id="name" name="name" required>
             <br>
             <label for="guests">Number of Guests:</label>
-            <input type="number" id="guests" name="guests" min="0" required>
+            <input type="number" id="guests" name="guests" min="0" value="1" required>
             <br>
             <input type="submit" value="Submit">
         </form>
