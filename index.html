@@ -41,20 +41,22 @@
     <div class="ribbon"></div>
     <div class="rsvp-form">
         <div class="venue-head">RSVP</div>
-        <form method="POST" action="https://script.google.com/macros/s/AKfycbxG_d_kyFATAnZhpyYP2Q8EE17BaMRES1ZKflDDXZkAJEPQVccLhX3jcLxFLQ3W-9p-Ag/exec">
+        <form method="POST" id="rsvpForm" action="https://script.google.com/macros/s/AKfycbxG_d_kyFATAnZhpyYP2Q8EE17BaMRES1ZKflDDXZkAJEPQVccLhX3jcLxFLQ3W-9p-Ag/exec">
             <label>Will you be attending?</label>
-            <div>
-                <input type="radio" id="option1" name="attending" value="25th Simant pooja and sangeet night">
-                <label class="radio-label" for="option1">25th Simant pooja and sangeet night</label>
-            </div>
-            <div>
-                <input type="radio" id="option2" name="attending" value="25th Simant pooja and sangeet night with stay">
-                <label class="radio-label" for="option2">25th Simant pooja and sangeet night with stay</label>
-            </div>
-            <div>
-                <input type="radio" id="option3" name="attending" value="26th wedding only">
-                <label class="radio-label" for="option3">26th wedding only</label>
-            </div>
+<div>
+    <input class="attending-cb" type="checkbox" id="option1" name="attending1" value="25th Simant pooja and sangeet night">
+    <label class="radio-label" for="option1">25th Simant pooja and sangeet night - only attendance</label>
+</div>
+<div>
+    <input class="attending-cb" type="checkbox" id="option2" name="attending2" value="25th Simant pooja and sangeet night with stay">
+    <label class="radio-label" for="option2">25th Simant pooja and sangeet night with stay</label>
+</div>
+<div>
+    <input class="attending-cb" type="checkbox" id="option3" name="attending3" value="26th wedding only">
+    <label class="radio-label" for="option3">26th wedding</label>
+</div>
+
+<input type="hidden" name="attending" id="checkbox_str">
             <label for="name">Your Name:</label>
             <input type="text" id="name" name="name" required>
             <br>
@@ -73,6 +75,30 @@
                     document.getElementById('submissionMessage').style.display = 'block';
                 }
             };
+            var form = document.getElementById('rsvpForm');
+
+            try {
+                form.addEventListener("submit", submitFn, false);
+            } catch(e) {
+                form.attachEvent("onsubmit", submitFn); //IE8
+            }
+            function submitFn(event) {
+            event.preventDefault();
+            var boxes = document.getElementsByClassName('attending-cb');
+            var checked = [];
+            for(var i=0; boxes[i]; ++i){
+            if(boxes[i].checked){
+                checked.push(boxes[i].value);
+            }
+            }
+
+            var checkedStr = checked.join();
+
+            document.getElementById('checkbox_str').value = checkedStr;
+            form.submit();
+
+            return false; 
+            }   
         </script>
 </body>
 </html>
